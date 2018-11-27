@@ -1,0 +1,22 @@
+html {
+  text-size-adjust: 100%;
+}
+
+body {
+  font: 1rem / 1.4 sans-serif;
+  margin: 1.25rem;
+}
+
+div {
+  max-width: 32em;
+}
+
+div:not(:last-child) {
+  margin-bottom: 1.25rem;
+}
+
+div::after {
+  color: #03f;
+  content: attr(data-rem) 'rem, ' attr(data-px) 'px';
+  display: block;
+}
