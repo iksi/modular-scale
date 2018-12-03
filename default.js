@@ -1,22 +1,22 @@
 var modularScale = (function () {
   var ratios = {
-    minorSecond: 16 / 15,               // 1.067
-    majorSecond: 9 / 8,                 // 1.125
-    minorThird: 6 / 5,                  // 1.2
-    majorThird: 5 / 4,                  // 1.25
-    perfectFourth: 4 / 3,               // 1.333
-    augmentedFourth: Math.sqrt(2) / 1,  // 1.414
-    perfectFifth: 3 / 2,                // 1.5
-    minorSixth: 8 / 5,                  // 1.6
-    golden: 1 / 2 + Math.sqrt(5) / 2,   // 1.618
-    majorSixth: 5 / 3,                  // 1.667
-    minorSeventh: 16 / 9,               // 1.778
-    majorSeventh: 15 / 8,               // 1.875
-    octave: 2 / 1,                      // 2
-    majorTenth: 5 / 2,                  // 2.5
-    majorEleventh: 8 / 3,               // 2.667
-    majorTwelfth: 3 / 1,                // 3
-    doubleOctave: 4 / 1                 // 4
+    minorSecond: 16 / 15, // 1.067
+    majorSecond: 9 / 8, // 1.125
+    minorThird: 6 / 5, // 1.2
+    majorThird: 5 / 4, // 1.25
+    perfectFourth: 4 / 3, // 1.333
+    augmentedFourth: Math.sqrt(2) / 1, // 1.414
+    perfectFifth: 3 / 2, // 1.5
+    minorSixth: 8 / 5, // 1.6
+    golden: 1 / 2 + Math.sqrt(5) / 2, // 1.618
+    majorSixth: 5 / 3, // 1.667
+    minorSeventh: 16 / 9, // 1.778
+    majorSeventh: 15 / 8, // 1.875
+    octave: 2 / 1, // 2
+    majorTenth: 5 / 2, // 2.5
+    majorEleventh: 8 / 3, // 2.667
+    majorTwelfth: 3 / 1, // 3
+    doubleOctave: 4 / 1 // 4
   }
 
   var defaults = {
@@ -37,7 +37,7 @@ var modularScale = (function () {
     }
 
     // assign variables for easier reading
-    var {bases, bigger, ratio, rounding, smaller} = options
+    var { bases, bigger, ratio, rounding, smaller } = options
 
     if (typeof ratio === 'string') {
       ratio = ratios[ratio]
@@ -64,7 +64,7 @@ var modularScale = (function () {
 
         bases.sort()
 
-        // which base to user (with fixed modulo)
+        // which base to use (with fixed modulo)
         base = bases[(step % bases.length + bases.length) % bases.length]
 
         pixel = base * Math.pow(ratio, Math.floor(step / bases.length))
